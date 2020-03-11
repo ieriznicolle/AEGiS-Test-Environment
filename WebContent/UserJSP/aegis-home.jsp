@@ -30,7 +30,7 @@
     <!-- Header  -->
     <!-- ============================================================== -->    
            <div style="text-align: center;">
-                <a href="index"><img src="assets/images/aegis-banner.JPG" alt="aegis-banner" style="max-height: 90px;"></a>
+                <a href="aegis-home"><img src="assets/images/aegis-banner.JPG" alt="aegis-banner" style="max-height: 90px;"></a>
 	        </div>
 	<!-- ============================================================== -->
     <!-- End of header  -->
@@ -39,71 +39,68 @@
     <!-- ============================================================== -->
     <!-- Body and Footer  -->
     <!-- ============================================================== -->
-	<div class="col-xl-12">    
-    <br>
-    <h3 align="center">Faculty Management Module</h3>
-    <br>
+	<div class="col-xl-12">   
+	 <!-- Top Nav  -->
+		<div class="tab-regular" style="margin-left: 6px;">
+	    			 <ul class="nav nav-tabs">
+	               		<li class="nav-item">
+	                    	<a class="nav-link active" id="message-tab" data-toggle="tab" href="#message" aria-controls="message" aria-selected="true">Message</a>
+	                 	</li>
+		                <li class="nav-item">
+	              			<a class="nav-link"  href="">Faculty Load</a>
+	      	            </li>
+	         	        <li class="nav-item">
+	                		<a class="nav-link"  href="">Classlist</a>
+	     	            </li>
+	     	            <li class="nav-item">
+	                		<a class="nav-link" id="sheet-tab" data-toggle="tab" href="#sheet" aria-controls="sheet" aria-selected="false">Grading Sheet</a>
+	     	            </li>
+	     	            <li class="nav-item">
+	                		<a class="nav-link"  href="">Faculty Profile</a>
+	     	            </li>
+	     	            <li class="nav-item">
+	                		<a class="nav-link"  href="">Calendar</a>
+	     	            </li>
+	     	            <li class="nav-item">
+	                		<a class="nav-link"  href="">Password</a>
+	     	            </li>
+	     	            <li class="nav-item">
+	                		<a class="nav-link"  href="">Library</a>
+	     	            </li>
+	 				</ul>
+		</div>
+		
+		<div class="row">
+			<div class="col-xl-6">
+				<h6 style="margin-left: 6px; margin-top:10px">Welcome, <b>LASTNAME, FIRSTNAME M.I. (EMPLOYEE ID)</b></h6>
+			</div>	
+			<div class="col-xl-6">
+				<h6 align="right" style="margin-right:6px;margin-top:10px"><a href="aegis-login" style="color:red;"><b><u>SIGN OUT</u></b></a></h6>
+			</div>
+		</div>
+		
+		<br>
+		<!--End of Top Nav  -->
+		<div class="tab-content">
+		
+			<div class="tab-pane fade show active" id="message" aria-labelledby="message-tab">
+				<h2 style="color: red; text-align:center;"> You have no messages to display. </h2>
+				<h6 style="color: red; text-align:center;">Sir, ipasa mo po kami. Hehe thank you po!</h6>
+			</div>
+			<div class="tab-pane fade" id="sheet" aria-labelledby="sheet-tab">
+				kimlhergeroge
+			</div>
+		</div>
+	
     
-    <div class="row">
-	    <div class="col-xl-2">
-	    	<a href="index"><img src="assets/images/FMM-logo.jpg" alt="FMM LOGO" style="height: 200px; margin: 50px"></a>
-	    </div>
-	    
-	    <div class="col-xl-6">
-	    	<form>
-			    <table class="table-loginpage">
-				    <tr> <th>User Authentication</th> </tr>
-				    <tr><td>
-				    <div class="row">
-				    	<div class="col-xl-2">
-					    <a href="index"><img src="assets/images/susi-logo.JPG" alt="susi logo" style="height: 70px;"></a>
-					    </div>
-					    
-					    
-				  		
-					    <div class="col-xl-2">
-					    </div>
-			    	</div>
-					</td></tr> 
-				      
-				    <tr><td><h6 style="text-align: center;"> By using this service, you understood and agree to the PUP Online Services <a href="http://www.pup.edu.ph/terms/" target="_blank">Terms of Use</a> and <a href="http://www.pup.edu.ph/privacy/" target="_blank">Privacy Statement</a> </h6>
-				    </td></tr>
-				    
-				    <tr><td>
-					    <div align="right">
-					    	<input class="form-controlbtn" type="submit" value="Sign-In"> <input class="form-controlbtn" type="reset" value="Clear Entries!"> 
-					    </div>
-				    </td></tr>
-				    
-				    <tr><td>
-						<h6 style="text-align: left;">Forgot your password?<a href="http://www.instagram.com/kimlherumali" target="_blank"><b> Click here.</b></a><br>
-						To SHS Teachers: <a href="http://www.twitter.com/kimlherumali" target="_blank"><b> Click here.</b></a></h6>
-				    </td></tr>
-		    	</table>
-	    	</form>
-	    </div>
-	    
-	    <div class="col-xl-4">
-	    	<h6> This module is exclusively for faculty members only. Modules included are:
-			    <br><br>
-			    <ul>
-				    <li>Messaging</li>
-				    <li>Faculty Load</li>
-				    <li>Profile</li>
-				    <li>Grading Sheet</li>
-				    <li>Calendar</li>
-			    </ul>
-	    	</h6>
-	    </div>  
-     </div>
-	 
+	</div>   
+	<!-- ============================================================== -->
+    <!-- End of Body -->
+    <!-- ============================================================== -->
 	<div style="text-align: center;">
-	 	<a href="index" align="center"><img src="assets/images/footer.JPG" alt="footer" style="height: 80px; margin: 20px"></a>
+	 	<a href="aegis-home" align="center"><img src="assets/images/footer.JPG" alt="footer" style="height: 80px; margin: 20px"></a>
 	</div>
 	</div>    
-    <!-- ============================================================== -->
-    <!-- End of Body and Footer-->
-    <!-- ============================================================== -->
     </div>
     
     <!-- ============================================================== -->

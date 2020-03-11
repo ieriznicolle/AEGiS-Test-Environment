@@ -3661,26 +3661,28 @@ btn-link
 
 .tab-regular .nav.nav-tabs .nav-link {
     display: block;
-    padding: 17px 49px;
-    color: #71748d;
-    background-color: #dddde8;
-    margin-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    color: #000000;
+    background-color: #00d7d7;
     border-color: #dddde8;
+    
 }
 
 .tab-regular .nav-tabs .nav-link:focus,
-.nav-tabs .nav-link:hover {}
+.nav-tabs .nav-link:hover {
+	background-color: #00aaaa;
+}
 
 .tab-regular .nav-tabs .nav-link.active {
-    background-color: #fff;
+    background-color: #00aaaa;
     border-color: #e6e6f2 #e6e6f2 #fff;
-    color: #800000;
+    color: #400040;
 }
 
 .tab-regular .tab-content {
     background-color: #fff;
-    padding: 30px;
-   /*  border: 1px solid #e6e6f2; */
+    padding: 3px;
     border-radius: 4px;
     border-top-left-radius: 0px
 }
