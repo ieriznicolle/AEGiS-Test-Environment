@@ -29,8 +29,8 @@ public class aegis_login extends HttpServlet
 		
 		else
 		{
-			//req.getRequestDispatcher("/UserJSP/aegis-login.jsp").forward(req, res);
-			res.sendRedirect("http://www.twitter.com/rxncll");
+			req.getRequestDispatcher("/UserJSP/aegis-login.jsp").forward(req, res);
+			//res.sendRedirect("http://www.twitter.com/rxncll");
 		}
 	}
 	
@@ -43,12 +43,12 @@ public class aegis_login extends HttpServlet
 			
 			if (action.equals("login") && user.equals("FA1234MN2020") && pass.equals("Tiktok"))
 			{
-				req.getRequestDispatcher("/aegis-home.jsp").forward(req, res);
+				req.getRequestDispatcher("/UserJSP/aegis-home.jsp").forward(req, res);
 			}
 			
 			else
 			{
-				req.getRequestDispatcher("/aegis-login.jsp").forward(req, res);
+				req.getRequestDispatcher("/UserJSP/aegis-login.jsp").forward(req, res);
 			}
 		}
 }
