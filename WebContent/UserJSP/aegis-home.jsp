@@ -50,7 +50,7 @@
 	    </div>
 	    
 	    <div class="col-xl-6">
-	    	<form name="form" action="login?action=login" method="post">
+	    	<form>
 			    <table class="table-loginpage">
 				    <tr> <th>User Authentication</th> </tr>
 				    <tr><td>
@@ -59,30 +59,7 @@
 					    <a href="index"><img src="assets/images/susi-logo.JPG" alt="susi logo" style="height: 70px;"></a>
 					    </div>
 					    
-					    <div class="col-xl-8">
-					    	
-					    <h6 align="center"> Please sign-in using your username and password.</h6>
-					    	<br>
-					    	<div class="row" style="margin: 3px">
-							    <div class="col-xl-4">
-									<h6 align="center">Username</h6>
-								</div>						
-								<div class="col-xl-8">
-									<input type="text" class="form-control1" name="username" placeholder ="Username" required> 
-								</div>
-							
-							</div>
-							
-							<div class="row" style="margin: 3px">
-							    <div class="col-xl-4">
-									<h6 align="center">Password</h6>
-								</div>
-								
-								<div class="col-xl-8">
-									<input type="password" name="password" class="form-control1" placeholder ="Password" required> 
-								</div>
-							</div>
-				  		</div>
+					    
 				  		
 					    <div class="col-xl-2">
 					    </div>
