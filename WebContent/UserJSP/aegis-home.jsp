@@ -87,12 +87,95 @@
 				<h2 style="color: red; text-align:center;"> You have no messages to display. </h2>
 				<h6 style="color: red; text-align:center;">Sir, ipasa mo po kami. Hehe thank you po!</h6>
 			</div>
+			
 			<div class="tab-pane fade" id="sheet" aria-labelledby="sheet-tab">
-				kimlhergeroge
+				<h3 style="text-align:center;"><b>Grading Sheet</b></h3>
+				<!-- combo boxes -->
+				
+				<h6 align="left" style="margin-left: 6px;">Department:
+					<select>
+					  <option value="cpe">Computer Engineering</option>
+					  <option value="ece">Electronics Engineering</option>
+					</select>
+				</h6>
+				<h6 align="left" style="margin-left: 6px;">School Year:
+					<select style="margin-left: 1px;">
+					  <option value="cpe">2019</option>
+					  <option value="ece">2020</option>
+					</select>
+				</h6>
+				<h6 align="left" style="margin-left: 6px;">Sem:
+					<select style="margin-left: 40px;">
+					  <option value="cpe">First</option>
+					  <option value="ece">Second</option>
+					</select>
+				</h6>
+				<h6 align="left" style="margin-left: 6px;">
+				<input type="submit" value="Search">
+				</h6>
+				
+				<!-- End combo boxes -->
+				<!-- Content -->
+				<div class="row">
+					<div class="col-xl-6">
+						<h6 align="left" style="margin-left: 6px;">0/2 posted result(s)</h6>
+					</div>
+					<div class="col-xl-6">
+						<h6 align="right" style="margin-right: 6px;">0/2 posted result(s)</h6>
+					</div>
+				</div>
+				
+				<table class="table-sheet">
+				<tr>
+				<th rowspan="2">#</th>
+				<th rowspan="2">Section</th>
+				<th rowspan="2">Schedule</th>
+				<th rowspan="2">Subject Code</th>
+				<th rowspan="2">Description</th>
+				<th rowspan="2">Faculty</th>
+				<th colspan="2">Date Posted</th>
+				<th rowspan="2">Date Printed</th>
+				</tr>
+				<tr>
+				<th>First Grading</th>
+				<th>Second Grading</th>
+				</tr>
+				
+				<tr>
+				<td>1</td>
+				<td><a href="aegis-open"><u>BSCOE 5-4</u></a></td>
+				<td>S | 4:00PM-9:00PM | Room#CEA314</td>
+				<td>BSCOE-ELEC3</td>
+				<td>Elective 3</td>
+				<td>MADRIGALEJOS, DANILO C.</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				</tr>
+				
+				<tr>
+				<td>2</td>
+				<td><a href="aegis-close"><u>BSCOE 5-5</u></a></td>
+				<td>S | 1:30PM-3:00PM | Room#CEA314</td>
+				<td>BSCOE-ELEC3</td>
+				<td>Elective 3</td>
+				<td>MADRIGALEJOS, DANILO C.</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				</tr>
+				</table>
+				<div class="row">
+					<div class="col-xl-6">
+						<h6 align="left" style="margin-left: 6px;">0/2 posted result(s)</h6>
+					</div>
+					<div class="col-xl-6">
+						<h6 align="right" style="margin-right: 6px;">0/2 posted result(s)</h6>
+					</div>
+				</div>
+				<!-- End Content -->
 			</div>
-		</div>
-	
-    
+		</div>	
 	</div>   
 	<!-- ============================================================== -->
     <!-- End of Body -->
@@ -101,7 +184,7 @@
 	 	<a href="aegis-home" align="center"><img src="assets/images/footer.JPG" alt="footer" style="height: 80px; margin: 20px"></a>
 	</div>
 	</div>    
-    </div>
+
     
     <!-- ============================================================== -->
     <!-- Scripts-->

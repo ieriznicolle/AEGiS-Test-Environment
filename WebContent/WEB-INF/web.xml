@@ -28,6 +28,26 @@
     <url-pattern>/aegis-home</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>aegis-close</servlet-name>
+    <jsp-file>/UserJSP/aegis-close.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>aegis-close</servlet-name>
+    <url-pattern>/aegis-close</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>aegis-open</servlet-name>
+    <jsp-file>/UserJSP/aegis-open.jsp</jsp-file>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>aegis-open</servlet-name>
+    <url-pattern>/aegis-open</url-pattern>
+  </servlet-mapping>
+  
 <!-- ACCOUNT --> 
 	<servlet>
 		<servlet-name>Account</servlet-name>

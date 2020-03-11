@@ -94,7 +94,7 @@
 				    
 				    <tr><td>
 					    <div align="right">
-					    	<input class="form-controlbtn" type="submit" value="Sign-In"> <input class="form-controlbtn" type="reset" value="Clear Entries!"> 
+					    	<!-- <input class="form-controlbtn" type="submit" value="Sign-In"> --> <button class="form-controlbtn"><a  href="aegis-home">Sign-In</a></button> <input class="form-controlbtn" type="reset" value="Clear Entries!"> 
 					    </div>
 				    </td></tr>
 				    
