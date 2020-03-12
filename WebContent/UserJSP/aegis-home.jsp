@@ -39,142 +39,83 @@
     <!-- ============================================================== -->
     <!-- Body and Footer  -->
     <!-- ============================================================== -->
+	
 	<div class="col-xl-12">   
 	 <!-- Top Nav  -->
+		
 		<div class="tab-regular" style="margin-left: 6px;">
-	    			 <ul class="nav nav-tabs">
-	               		<li class="nav-item">
-	                    	<a class="nav-link active" id="message-tab" data-toggle="tab" href="#message" aria-controls="message" aria-selected="true">Message</a>
-	                 	</li>
-		                <li class="nav-item">
-	              			<a class="nav-link"  href="">Faculty Load</a>
-	      	            </li>
-	         	        <li class="nav-item">
-	                		<a class="nav-link"  href="">Classlist</a>
-	     	            </li>
-	     	            <li class="nav-item">
-	                		<a class="nav-link" id="sheet-tab" data-toggle="tab" href="#sheet" aria-controls="sheet" aria-selected="false">Grading Sheet</a>
-	     	            </li>
-	     	            <li class="nav-item">
-	                		<a class="nav-link"  href="">Faculty Profile</a>
-	     	            </li>
-	     	            <li class="nav-item">
-	                		<a class="nav-link"  href="">Calendar</a>
-	     	            </li>
-	     	            <li class="nav-item">
-	                		<a class="nav-link"  href="">Password</a>
-	     	            </li>
-	     	            <li class="nav-item">
-	                		<a class="nav-link"  href="">Library</a>
-	     	            </li>
-	 				</ul>
+	    	<ul class="nav nav-tabs">
+	        	<li class="nav-item">
+		        	<form name="form" action="signedin?signedin=home" method="post">
+		            	<button type="submit" class="nav-link active" value="Message">Message</button>
+					</form>
+				</li>
+	                 	
+		        <li class="nav-item">
+	            	<form name="form" action="signedin?signedin=home" method="post">
+	              		<button type="submit" class="nav-link" value="Faculty Load">Faculty Load</button>
+	      			</form>
+	      	    </li>
+	      	            
+	         	<li class="nav-item">
+	                <form name="form" action="signedin?signedin=home" method="post">
+	                	<button type="submit" class="nav-link" value="Classlist">Classlist</button>
+	     	        </form>
+	     	    </li>
+	     	            
+	     	    <li class="nav-item">
+	                <form name="form" action="signedin?signedin=gradingsheet" method="post">
+	                	<button type="submit" class="nav-link" value="Grading Sheet">Grading Sheet</button>
+	     	    	</form>
+	     	    </li>
+	     	            
+	     	    <li class="nav-item">
+	                <form name="form" action="signedin?signedin=home" method="post">
+	                	<button type="submit" class="nav-link" value="Faculty Profile">Faculty Profile</button>
+	     	    	</form>
+	     	    </li>
+	     	            
+	     	    <li class="nav-item">
+	                <form name="form" action="signedin?signedin=home" method="post">
+	                	<button type="submit" class="nav-link" value="Calendar">Calendar</button>
+	     	        </form>
+	     	    </li>
+	     	            
+	     	    <li class="nav-item">
+	                <form name="form" action="signedin?signedin=home" method="post">
+	                	<button type="submit" class="nav-link" value="Password">Password</button>
+	     	    	</form>
+	     	    </li>
+	     	            
+	     		<li class="nav-item">
+	                <form name="form" action="signedin?signedin=home" method="post">
+	                	<button type="submit" class="nav-link" value="Library">Library</button>
+	     	    	</form>
+	     		</li>
+	 		</ul>
 		</div>
 		
 		<div class="row">
 			<div class="col-xl-6">
-				<h6 style="margin-left: 6px; margin-top:10px">Welcome, <b>LASTNAME, FIRSTNAME M.I. (EMPLOYEE ID)</b></h6>
+				<h6 style="margin-left: 6px; margin-top:10px">Welcome, <b>MADRIGALEJOS, DANILO C. (FA1234MN2020)</b></h6>
 			</div>	
 			<div class="col-xl-6">
-				<h6 align="right" style="margin-right:6px;margin-top:10px"><a href="aegis-login" style="color:red;"><b><u>SIGN OUT</u></b></a></h6>
+				<form name="form" action="signedin?signedin=signout" method="post">
+					<h6 align="right" style="margin-right:6px;margin-top:10px">
+					<button type="submit" id="signout" style="color:red; border: 0px; background-color: rgba(0, 0, 0, 0);" value="SIGN OUT"><b><u>SIGN OUT</u></b></button></h6>
+				</form>
 			</div>
 		</div>
 		
 		<br>
 		<!--End of Top Nav  -->
-		<div class="tab-content">
 		
+		<div class="tab-content">
 			<div class="tab-pane fade show active" id="message" aria-labelledby="message-tab">
 				<h2 style="color: red; text-align:center;"> You have no messages to display. </h2>
 				<h6 style="color: red; text-align:center;">Sir, ipasa mo po kami. Hehe thank you po!</h6>
 			</div>
 			
-			<div class="tab-pane fade" id="sheet" aria-labelledby="sheet-tab">
-				<h3 style="text-align:center;"><b>Grading Sheet</b></h3>
-				<!-- combo boxes -->
-				
-				<h6 align="left" style="margin-left: 6px;">Department:
-					<select>
-					  <option value="cpe">Computer Engineering</option>
-					  <option value="ece">Electronics Engineering</option>
-					</select>
-				</h6>
-				<h6 align="left" style="margin-left: 6px;">School Year:
-					<select style="margin-left: 1px;">
-					  <option value="cpe">2019</option>
-					  <option value="ece">2020</option>
-					</select>
-				</h6>
-				<h6 align="left" style="margin-left: 6px;">Sem:
-					<select style="margin-left: 40px;">
-					  <option value="cpe">First</option>
-					  <option value="ece">Second</option>
-					</select>
-				</h6>
-				<h6 align="left" style="margin-left: 6px;">
-				<input type="submit" value="Search">
-				</h6>
-				
-				<!-- End combo boxes -->
-				<!-- Content -->
-				<div class="row">
-					<div class="col-xl-6">
-						<h6 align="left" style="margin-left: 6px;">0/2 posted result(s)</h6>
-					</div>
-					<div class="col-xl-6">
-						<h6 align="right" style="margin-right: 6px;">0/2 posted result(s)</h6>
-					</div>
-				</div>
-				
-				<table class="table-sheet">
-				<tr>
-				<th rowspan="2">#</th>
-				<th rowspan="2">Section</th>
-				<th rowspan="2">Schedule</th>
-				<th rowspan="2">Subject Code</th>
-				<th rowspan="2">Description</th>
-				<th rowspan="2">Faculty</th>
-				<th colspan="2">Date Posted</th>
-				<th rowspan="2">Date Printed</th>
-				</tr>
-				<tr>
-				<th>First Grading</th>
-				<th>Second Grading</th>
-				</tr>
-				
-				<tr>
-				<td>1</td>
-				<td><a href="aegis-open"><u>BSCOE 5-4</u></a></td>
-				<td>S | 4:00PM-9:00PM | Room#CEA314</td>
-				<td>BSCOE-ELEC3</td>
-				<td>Elective 3</td>
-				<td>MADRIGALEJOS, DANILO C.</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				</tr>
-				
-				<tr>
-				<td>2</td>
-				<td><a href="aegis-close"><u>BSCOE 5-5</u></a></td>
-				<td>S | 1:30PM-3:00PM | Room#CEA314</td>
-				<td>BSCOE-ELEC3</td>
-				<td>Elective 3</td>
-				<td>MADRIGALEJOS, DANILO C.</td>
-				<td></td>
-				<td></td>
-				<td></td>
-				</tr>
-				</table>
-				<div class="row">
-					<div class="col-xl-6">
-						<h6 align="left" style="margin-left: 6px;">0/2 posted result(s)</h6>
-					</div>
-					<div class="col-xl-6">
-						<h6 align="right" style="margin-right: 6px;">0/2 posted result(s)</h6>
-					</div>
-				</div>
-				<!-- End Content -->
-			</div>
 		</div>	
 	</div>   
 	<!-- ============================================================== -->

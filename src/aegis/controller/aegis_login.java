@@ -4,6 +4,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class aegis_login extends HttpServlet
 {
@@ -24,6 +25,9 @@ public class aegis_login extends HttpServlet
 		
 		if (action.equals("login") && user.equals("FA1234MN2020") && pass.equals("Tiktok"))
 		{
+			HttpSession sessionuname = req.getSession();
+			sessionuname.setAttribute("username", user);
+			
 			req.getRequestDispatcher("/UserJSP/aegis-home.jsp").forward(req, res);
 		}
 		
@@ -43,6 +47,9 @@ public class aegis_login extends HttpServlet
 			
 			if (action.equals("login") && user.equals("FA1234MN2020") && pass.equals("Tiktok"))
 			{
+				HttpSession sessionuname = req.getSession();
+				sessionuname.setAttribute("username", user);
+				
 				req.getRequestDispatcher("/UserJSP/aegis-home.jsp").forward(req, res);
 			}
 			

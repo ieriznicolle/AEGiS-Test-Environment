@@ -58,7 +58,17 @@
 		<servlet-name>Account</servlet-name>
 		<url-pattern>/login/*</url-pattern>
 	</servlet-mapping>
-  
+	
+<!-- SIGNED IN --> 
+	<servlet>
+		<servlet-name>Signed-in</servlet-name>
+		<servlet-class>aegis.controller.aegis_signedin</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Signed-in</servlet-name>
+		<url-pattern>/signedin/*</url-pattern>
+	</servlet-mapping>
   
 </web-app>
 

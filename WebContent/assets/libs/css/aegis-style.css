@@ -7983,3 +7983,20 @@ Media Query
 	background-color: #808080;
 	color: #ffffff;
 }
+
+
+
+/* GRADESHEET AND SIGN OUT BUTTON HOVER */
+
+#BSCOE :hover {
+  color: #c0c0c0;
+}
+
+#signout :hover {
+  background-color: rgba(0,0,0,0);
+  color: #c0c0c0;
+}
+
+
+
+

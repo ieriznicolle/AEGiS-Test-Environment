@@ -11,30 +11,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>SIS for Faculty (Test Environment)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>SIS for Faculty (Test Environment)</title>
+	
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/libs/css/aegis-style.css">
+	<link rel="stylesheet" href="assets/vendor/inputmask/css/inputmask.css">
+	<link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
 
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/libs/css/aegis-style.css">
-<link rel="stylesheet" href="assets/vendor/inputmask/css/inputmask.css">
-<link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+	<%@ taglib prefix = "c"  uri = "http://java.sun.com/jsp/jstl/core" %>
+ 	<%@ taglib prefix = "sql"  uri = "http://java.sun.com/jsp/jstl/sql" %>
 </head>
 
 <body>
+<sql:setDataSource
+	var="myDS"
+	driver="com.mysql.jdbc.Driver"
+	url = "jdbc:mysql://127.0.0.1:3306/aegis?user=root&password=$carletWitch12&useSSL=false"
+/>
+
+<sql:query var="userslist" dataSource="${myDS}">
+	select * from bscoe55;
+</sql:query>
+
+
 	<div class="dashboard-main-wrapper">
 		<!-- ============================================================== -->
 		<!-- Header  -->
 		<!-- ============================================================== -->
 		<div style="text-align: center;">
-			<a href="aegis-home"><img src="assets/images/aegis-banner.JPG"
-				alt="aegis-banner" style="max-height: 90px;"></a>
+			<a href="aegis-home"><img src="assets/images/aegis-banner.JPG" alt="aegis-banner" style="max-height: 90px;"></a>
 		</div>
+		
 		<!-- ============================================================== -->
 		<!-- End of header  -->
 		<!-- ============================================================== -->
@@ -46,123 +60,157 @@
 			<!-- Top Nav  -->
 			<div class="tab-regular" style="margin-left: 6px;">
 				<ul class="nav nav-tabs">
-					<li class="nav-item"><a class="nav-link" href="aegis-home">Message</a></li>
-					<li class="nav-item"><a class="nav-link" href="">FacultyLoad</a></li>
-					<li class="nav-item"><a class="nav-link" href="">Classlist</a></li>
-					<li class="nav-item"><a class="nav-link active">Grading Sheet</a></li>
-					<li class="nav-item"><a class="nav-link" href="">Faculty Profile</a></li>
-					<li class="nav-item"><a class="nav-link" href="">Calendar</a></li>
-					<li class="nav-item"><a class="nav-link" href="">Password</a></li>
-					<li class="nav-item"><a class="nav-link" href="">Library</a></li>
-				</ul>
+	               	<li class="nav-item">
+		                <form name="form" action="signedin?signedin=home" method="post">
+		            	   	<button type="submit" class="nav-link" value="Message">Message</button>
+	     	            </form>
+		            </li>
+	                 	
+		            <li class="nav-item">
+	              		<form name="form" action="signedin?signedin=home" method="post">
+	              			<button type="submit" class="nav-link" value="Faculty Load">Faculty Load</button>
+	      	            </form>
+	      	        </li>
+	      	            
+	         	    <li class="nav-item">
+	                	<form name="form" action="signedin?signedin=home" method="post">
+	                		<button type="submit" class="nav-link" value="Classlist">Classlist</button>
+	     	           	</form>
+	     	        </li>
+	     	            
+	     	        <li class="nav-item">
+	                	<form name="form" action="signedin?signedin=gradingsheet" method="post">
+	                		<button type="submit" class="nav-link active" value="Grading Sheet">Grading Sheet</button>
+	     	            </form>
+	     	        </li>
+	     	            
+	     	        <li class="nav-item">
+	                	<form name="form" action="signedin?signedin=home" method="post">
+	                		<button type="submit" class="nav-link" value="Faculty Profile">Faculty Profile</button>
+	     	            </form>
+	     	        </li>
+	     	            
+	     	        <li class="nav-item">
+	                	<form name="form" action="signedin?signedin=home" method="post">
+	                		<button type="submit" class="nav-link" value="Calendar">Calendar</button>
+	     	            </form>
+	     	        </li>
+	     	            
+	     	        <li class="nav-item">
+	                	<form name="form" action="signedin?signedin=home" method="post">
+	                		<button type="submit" class="nav-link" value="Password">Password</button>
+	     	            </form>
+	     	        </li>
+	     	            
+	     	        <li class="nav-item">
+	                	<form name="form" action="signedin?signedin=home" method="post">
+	                		<button type="submit" class="nav-link" value="Library">Library</button>
+	     	            </form>
+	     	        </li>
+	 			</ul>
 			</div>
 
 			<div class="row">
 				<div class="col-xl-6">
 					<h6 style="margin-left: 6px; margin-top: 10px">
-						Welcome, <b>LASTNAME, FIRSTNAME M.I. (EMPLOYEE ID)</b>
+						Welcome, <b>MADRIGALEJOS, DANILO C. (FA1234MN2020)</b>
 					</h6>
 				</div>
+				
 				<div class="col-xl-6">
-					<h6 align="right" style="margin-right: 6px; margin-top: 10px">
-						<a href="aegis-login" style="color: red;"><b><u>SIGN OUT</u></b></a>
-					</h6>
+					<form name="form" action="signedin?signedin=signout" method="post">
+						<h6 align="right" style="margin-right:6px;margin-top:10px">
+						<button type="submit" id="signout" style="color:red; border: 0px; background-color: rgba(0, 0, 0, 0);" value="SIGN OUT"><b><u>SIGN OUT</u></b></button></h6>
+					</form>
 				</div>
 			</div>
 
 			<br>
 			<!--End of Top Nav  -->
-			<!-- combo boxes -->
+			
 			<h3 style="text-align: center;">
 				<b>Grading Sheet</b>
 			</h3>
-			<!-- combo boxes -->
 
-			<h6>
-				Department: <select>
+			<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">Department:
+				<select>
 					<option value="cpe">Computer Engineering</option>
-					<option value="ece">Electronics Engineering</option>
 				</select>
 			</h6>
-			<h6>
-				School Year: <select style="margin-left: 1px;">
-					<option value="cpe">2019</option>
-					<option value="ece">2020</option>
+			
+			<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">School Year:
+				<select style="margin-left: 1px;">
+					<option value="cpe">1920</option>
 				</select>
 			</h6>
-			<h6>
-				Sem: <select style="margin-left: 40px;">
-					<option value="cpe">First</option>
-					<option value="ece">Second</option>
+					
+			<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">Sem:
+				<select style="margin-left: 40px;">
+					<option value="cpe">Second</option>
 				</select>
 			</h6>
-			<h6 ><input class="form-controlbtn" type="reset" value="Search"></h6>
-			<!-- End combo boxes -->
+					
+			<h6 align="left" style="margin-left: 6px; margin-bottom: 10px; margin-top: 6px;">
+				<input type="submit" value="Search">
+			</h6>
+			
 			<!-- Content -->
 			<h3 style="color: red; text-align:center;"> "Encoding Of Grades is Not Open." </h3>
 			<h6 align="left" ><i class="fas fa-print"></i><u><a>Print Grading Sheet</a></u></h6>
 			
 			<table class="table-sheet" style="margin:5px;">
-			<tr>
-			<th style="width: 10%">Section</th>
-			<td style="width: 30%">*Section*</td>
-			<th style="width: 10%">Subject</th>
-			<td style="width: 50%">*Subject*</td>
-			</tr>
-			<tr>
-			<th style="width: 10%">Professor</th>
-			<td style="width: 30%">*Professor*</td>
-			<th style="width: 10%">Schedule</th>
-			<td style="width: 50%">*Schedule*</td>
-			</tr>
+				<tr align="left">
+					<th style="width: 10%; padding:3px;">Section</th><td style="padding:3px;">:</td><td style="width: 30%; padding:3px;">BSCOE 5-5</td>
+					<th style="width: 10%; padding:3px;">Subject</th><td style="padding:3px;">:</td><td style="width: 50%; padding:3px;">BSCOE-ELEC3 (BSCOE ELECTIVE 3)</td>
+				</tr>
+				
+				<tr align="left">
+					<th style="width: 10%; padding:3px;">Professor</th><td style="padding:3px;">:</td><td style="width: 30%; padding:3px;">MADRIGALEJOS, DANILO C.</td>
+					<th style="width: 10%; padding:3px;">Schedule</th><td style="padding:3px;">:</td><td style="width: 50%; padding:3px;">S/S 04:00PM-06:00PM/06:00PM-09:00PM Room No.: CEA314/CEA314</td>
+				</tr>
 			</table>
 			
-			<h5 ><b><i>Instructions: </i><i style="color: red;">Click Review button to check the encoded grades, then click the Finalize button to submit the grades.</i></b></h5>
-			<h5 ><b><i>Reminder: </i><i style="color: red;">You can no longer change the grades once you have finalize it.</i></b></h5>
-			<h6 ><input class="form-controlbtn" type="reset" value="Review Grading Sheet"></h6>
+			<h5><b><i>Instructions: </i><i style="color: red;">Click Review button to check the encoded grades, then click the Finalize button to submit the grades.</i></b></h5>
+			<h5><b><i>Reminder: </i><i style="color: red;">You can no longer change the grades once you have finalize it.</i></b></h5>
+			
+			<h6 align="left" style="margin-left: 6px; margin-bottom: 2px; margin-top: 2px;">
+				<input type="submit" value="Review Grading Sheet">
+			</h6>
 			
 			<table class="table-grade" style="margin-top:10px">
 				<tr>
-					<th style="width: 5%">#</th>
-					<th style="width: 20%">Student No.</th>
-					<th style="width: 25%">Name</th>
-					<th style="width: 5%">First Grading</th>
-					<th style="width: 5%">Second Grading</th>
+					<th style="width: 3%">#</th>
+					<th style="width: 15%">Student No.</th>
+					<th style="width: 20%">Name</th>
+					<th style="width: 10%">First Grading</th>
+					<th style="width: 10%">Second Grading</th>
 					<th style="width: 5%">C Rating</th>
 					<th style="width: 5%">F Rating</th>
 					<th style="width: 10%">Other Remarks</th>
 					<th style="width: 10%">Remarks</th>
 				</tr>
 				
-				<tr>
-					<td>*#</td>
-					<td>*Student No.</td>
-					<td>*Name</td>
-					<td>
-					<select>
-					<c:forEach var="grade" items="${grades}">
-					<option value="${grade}">${grade}</option>
-					</c:forEach>
-					</select>
-					</td>
-					<td>
-					<select>
-					<c:forEach var="grade" items="${grades}">
-					<option value="${grade}">${grade}</option>
-					</c:forEach>
-					</select>
-					</td>
-					<td>- not set -</td>
-					<td>- not set -</td>
-					<td>- not set -</td>
-					<td>*Remarks</td>
-				</tr>
+				<c:forEach var="student" items="${userslist.rows}">
+					<tr>
+						<td align="left"><c:out value="${student.num}"/></td>
+						<td><c:out value="${student.studnum}"/></td>
+						<td align="left"><c:out value="${student.name}"/></td>
+						<td><i><c:out value="${student.f_grading}"/></i></td>
+						<td><i><c:out value="${student.s_grading}"/></i></td>
+						<td><i><c:out value="${student.c_rating}"/></i></td>
+						<td><i><c:out value="${student.f_rating}"/></i></td>
+						<td><i><c:out value="${student.o_remarks}"/></i></td>
+						<td><i><c:out value="${student.f_remarks}"/></i></td>
+					</tr>
+				</c:forEach>
 			</table>
 			<!-- End Content -->
+			
 		</div>
 		<!-- ============================================================== -->
 		<!-- End of Body -->
 		<!-- ============================================================== -->
+		
 		<div style="text-align: center;">
 			<a href="aegis-home" align="center"><img src="assets/images/footer.JPG" alt="footer" style="height: 80px; margin: 20px"></a>
 		</div>
