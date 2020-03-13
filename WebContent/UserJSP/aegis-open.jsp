@@ -216,15 +216,16 @@
 									</c:forEach>
 								</select>
 							</i></td>
-							<td class="cc_rating"><i><c:out value="${student.c_rating}"/></i>
-								<input type="hidden" class="c_rating" name="c_rating" value="${student.c_rating}"/></td>
-							<td class="ff_rating"><i><c:out value="${student.f_rating}"/></i>
-								<input type="hidden" class="f_rating" name="f_rating" value="${student.f_rating}"/></td>
-							<td class="oo_remarks"><i><c:out value="${student.o_remarks}"/></i>
-								<input type="hidden" class="o_remarks" name="o_remarks" value="${student.o_remarks}"/></td>
-							<td class="ff_remarks"><i><c:out value="${student.f_remarks}"/></i>
-								<input type="hidden" class="f_remarks" name="f_remarks" value="${student.f_remarks}"/></td>
+							<td class="cc_rating"><i><c:out value="${student.c_rating}"/></i></td>
+							<td class="ff_rating"><i><c:out value="${student.f_rating}"/></i></td>
+							<td class="oo_remarks"><i><c:out value="${student.o_remarks}"/></i></td>
+							<td class="ff_remarks"><i><c:out value="${student.f_remarks}"/></i></td>
 						</tr>
+						
+						<input type="hidden" class="c_rating" name="c_rating" value="${student.c_rating}"/>
+						<input type="hidden" class="f_rating" name="f_rating" value="${student.f_rating}"/>
+						<input type="hidden" class="o_remarks" name="o_remarks" value="${student.o_remarks}"/>
+						<input type="hidden" class="f_remarks" name="f_remarks" value="${student.f_remarks}"/>
 					</c:forEach>
 				</table>
 			
@@ -277,9 +278,12 @@
 			var ffrmk = document.getElementsByClassName("ff_remarks");		
 			
 			document.getElementById("length").value = fg.length;
+			/* 
 			alert(fg.length);
+			 */
+			var i;
 			
-			for (var i = 0; i < fg.length; i++) {
+			for (i = 0; i < fg.length; i++) {
 				fg[i].setAttribute("name", "f_grading"+i);
 				sg[i].setAttribute("name", "s_grading"+i);
 				crtg[i].setAttribute("name", "c_rating"+i);
