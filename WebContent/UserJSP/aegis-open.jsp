@@ -179,49 +179,58 @@
 				<input type="submit" value="Review Grading Sheet">
 			</h6>
 				
-			<table class="table-grade" style="margin-top:10px">
-				<tr>
-					<th style="width: 3%">#</th>
-					<th style="width: 15%">Student No.</th>
-					<th style="width: 20%">Name</th>
-					<th style="width: 10%">First Grading</th>
-					<th style="width: 10%">Second Grading</th>
-					<th style="width: 5%">C Rating</th>
-					<th style="width: 5%">F Rating</th>
-					<th style="width: 10%">Other Remarks</th>
-					<th style="width: 10%">Remarks</th>
-				</tr>
-				
-				<c:forEach var="student" items="${userslist.rows}">
+			<form name="form" action="encode" method="post">
+				<table class="table-grade" style="margin-top:10px" id="xTable">
 					<tr>
-						<td align="left"><c:out value="${student.num}"/></td>
-						<td><c:out value="${student.studnum}"/></td>
-						<td align="left"><c:out value="${student.name}"/></td>
-						<td><i>
-							<select class="evidence" name="evidence">
-								<option value="${student.f_grading}" selected><c:out value="${student.f_grading}"/></option>
-								
-								<c:forEach var="gr" items="${gradeslist.rows}">
-									<option value="${gr.grade}"><c:out value="${gr.grade}"/></option>
-								</c:forEach>
-							</select>
-						</i></td>
-						<td><i>
-							<select class="evidence" name="evidence">
-								<option value="${student.s_grading}" selected><c:out value="${student.s_grading}"/></option>
-								
-								<c:forEach var="gr" items="${gradeslist.rows}">
-									<option value="${gr.grade}"><c:out value="${gr.grade}"/></option>
-								</c:forEach>
-							</select>
-						</i></td>
-						<td><i><c:out value="${student.c_rating}"/></i></td>
-						<td><i><c:out value="${student.f_rating}"/></i></td>
-						<td><i><c:out value="${student.o_remarks}"/></i></td>
-						<td><i><c:out value="${student.f_remarks}"/></i></td>
+						<th style="width: 3%">#</th>
+						<th style="width: 15%">Student No.</th>
+						<th style="width: 20%">Name</th>
+						<th style="width: 10%">First Grading</th>
+						<th style="width: 10%">Second Grading</th>
+						<th style="width: 5%">C Rating</th>
+						<th style="width: 5%">F Rating</th>
+						<th style="width: 10%">Other Remarks</th>
+						<th style="width: 10%">Remarks</th>
 					</tr>
-				</c:forEach>
-			</table>
+					
+					<c:forEach var="student" items="${userslist.rows}">
+						<tr>
+							<td align="left"><c:out value="${student.num}"/></td>
+							<td><c:out value="${student.studnum}"/></td>
+							<td align="left"><c:out value="${student.name}"/></td>
+							<td><i>
+								<select name="f_grading" class="f_grading">
+									<option value="${student.f_grading}" selected><c:out value="${student.f_grading}"/></option>
+									
+									<c:forEach var="gr" items="${gradeslist.rows}">
+										<option value="${gr.grade}"><c:out value="${gr.grade}"/></option>
+									</c:forEach>
+								</select>
+							</i></td>
+							<td><i>
+								<select name="s_grading" class="s_grading">
+									<option value="${student.s_grading}" selected><c:out value="${student.s_grading}"/></option>
+									
+									<c:forEach var="gr" items="${gradeslist.rows}">
+										<option value="${gr.grade}"><c:out value="${gr.grade}"/></option>
+									</c:forEach>
+								</select>
+							</i></td>
+							<td class="cc_rating"><i><c:out value="${student.c_rating}"/></i>
+								<input type="hidden" class="c_rating" name="c_rating" value="${student.c_rating}"/></td>
+							<td class="ff_rating"><i><c:out value="${student.f_rating}"/></i>
+								<input type="hidden" class="f_rating" name="f_rating" value="${student.f_rating}"/></td>
+							<td class="oo_remarks"><i><c:out value="${student.o_remarks}"/></i>
+								<input type="hidden" class="o_remarks" name="o_remarks" value="${student.o_remarks}"/></td>
+							<td class="ff_remarks"><i><c:out value="${student.f_remarks}"/></i>
+								<input type="hidden" class="f_remarks" name="f_remarks" value="${student.f_remarks}"/></td>
+						</tr>
+					</c:forEach>
+				</table>
+			
+			<input type="hidden" id="length" name="length" value="1"/>
+			<input type="submit" style="align:center;" value="Save"/>
+			</form>
 			<!-- End Content -->
 		</div>
 		
@@ -242,6 +251,122 @@
 	<script src="assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 	<script src="assets/libs/js/main-js.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		
+	<script>
+		$('#xTable select').on('change', function(e) {
+		  var data = $(this).val();
+		  console.log(data);
+		  console.log(this);
+		  
+		  run();
+		});
+		
+		function run() {
+			var fg = document.getElementsByClassName("f_grading");
+			var sg = document.getElementsByClassName("s_grading");
+			
+			var crtg = document.getElementsByClassName("c_rating");
+			var frtg = document.getElementsByClassName("f_rating");
+			var ormk = document.getElementsByClassName("o_remarks");
+			var frmk = document.getElementsByClassName("f_remarks");
+			
+			var ccrtg = document.getElementsByClassName("cc_rating");
+			var ffrtg = document.getElementsByClassName("ff_rating");
+			var oormk = document.getElementsByClassName("oo_remarks");
+			var ffrmk = document.getElementsByClassName("ff_remarks");		
+			
+			document.getElementById("length").value = fg.length;
+			alert(fg.length);
+			
+			for (var i = 0; i < fg.length; i++) {
+				fg[i].setAttribute("name", "f_grading"+i);
+				sg[i].setAttribute("name", "s_grading"+i);
+				crtg[i].setAttribute("name", "c_rating"+i);
+				frtg[i].setAttribute("name", "f_rating"+i);
+				ormk[i].setAttribute("name", "o_remarks"+i);
+				frmk[i].setAttribute("name", "f_remarks"+i);
+				
+				if (fg[i].value == 'W' || sg[i].value == 'W') {
+					fg[i].value = "W";
+					sg[i].value = "W";
+					crtg[i].value = "W";
+					frtg[i].value = "W";
+					ormk[i].value = "W";
+					frmk[i].value = "WITHDRAW";
+					
+					document.getElementsByClassName("cc_rating")[i].innerHTML = "W";
+					document.getElementsByClassName("ff_rating")[i].innerHTML = "W";
+					document.getElementsByClassName("oo_remarks")[i].innerHTML = "W";
+					document.getElementsByClassName("ff_remarks")[i].innerHTML = "WITHDRAW";
+				}
+				
+				else if (fg[i].value == 'D' || sg[i].value == 'D') {
+					fg[i].value = "D";
+					sg[i].value = "D";
+					crtg[i].value = "D";
+					frtg[i].value = "D";
+					ormk[i].value = "D";
+					frmk[i].value = "DROPPED";
+					
+					document.getElementsByClassName("cc_rating")[i].innerHTML = "D";
+					document.getElementsByClassName("ff_rating")[i].innerHTML = "D";
+					document.getElementsByClassName("oo_remarks")[i].innerHTML = "D";
+					document.getElementsByClassName("ff_remarks")[i].innerHTML = "DROPPED";
+				}
+				
+				else if (fg[i].value == 'INC' || sg[i].value == 'INC') {
+					fg[i].value = "INC";
+					sg[i].value = "INC";
+					crtg[i].value = "INC";
+					frtg[i].value = "INC";
+					ormk[i].value = "INC";
+					frmk[i].value = "INCOMPLETE";
+					
+					document.getElementsByClassName("cc_rating")[i].innerHTML = "INC";
+					document.getElementsByClassName("ff_rating")[i].innerHTML = "INC";
+					document.getElementsByClassName("oo_remarks")[i].innerHTML = "INC";
+					document.getElementsByClassName("ff_remarks")[i].innerHTML = "INCOMPLETE";
+				}
+				
+				else if (fg[i].value == '- not set -' && sg[i].value == '- not set -') {
+					crtg[i].value = "- not set -";
+					frtg[i].value = "- not set -";
+					ormk[i].value = "- not set -";
+					frmk[i].value = " ";
+					
+					document.getElementsByClassName("cc_rating")[i].innerHTML = "- not set -";
+					document.getElementsByClassName("ff_rating")[i].innerHTML = "- not set -";
+					document.getElementsByClassName("oo_remarks")[i].innerHTML = "- not set -";
+					document.getElementsByClassName("ff_remarks")[i].innerHTML = " ";
+				}
+				
+				else {
+					crtg[i].value = parseFloat(fg[i].value);
+					frtg[i].value = parseFloat(sg[i].value);
+					ormk[i].value = (parseFloat(fg[i].value) + parseFloat(sg[i].value)) /2;
+					
+					if (ormk[i].value == 'NaN') {
+						ormk[i].value = "F";
+					}
+					
+					if (ormk[i].value >= 1.0 && ormk[i].value <= 3.0) {
+						frmk[i].value = "PASSED";
+					}
+						
+					else {
+						frmk[i].value = "FAILED";
+					}
+						
+					document.getElementsByClassName("cc_rating")[i].innerHTML = fg[i].value;
+					document.getElementsByClassName("ff_rating")[i].innerHTML = sg[i].value;
+					document.getElementsByClassName("oo_remarks")[i].innerHTML = ormk[i].value;
+					document.getElementsByClassName("ff_remarks")[i].innerHTML = frmk[i].value;	
+				}
+			}
+		}
+	</script>
+	
 	<!-- ============================================================== -->
 	<!-- End of Scripts-->
 	<!-- ============================================================== -->

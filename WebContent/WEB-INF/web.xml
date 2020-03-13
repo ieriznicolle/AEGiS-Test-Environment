@@ -69,6 +69,17 @@
 		<servlet-name>Signed-in</servlet-name>
 		<url-pattern>/signedin/*</url-pattern>
 	</servlet-mapping>
+	
+<!-- ENCODING --> 
+	<servlet>
+		<servlet-name>Encoding</servlet-name>
+		<servlet-class>aegis.controller.aegis_encode</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Encoding</servlet-name>
+		<url-pattern>/encode/*</url-pattern>
+	</servlet-mapping>
   
 </web-app>
 
