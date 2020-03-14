@@ -24,7 +24,7 @@ public class DBConnection
 				e.printStackTrace();
 			} 
 
-			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/aegis?user=root&password=$carletWitch12&useSSL=false");
+			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/aegis?user=root&password=password&useSSL=false");
 			
 			//System.out.println("\nPrinting connection object: " + con);
 			

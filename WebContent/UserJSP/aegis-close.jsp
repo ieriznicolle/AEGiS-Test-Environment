@@ -33,7 +33,7 @@
 <sql:setDataSource
 	var="myDS"
 	driver="com.mysql.jdbc.Driver"
-	url = "jdbc:mysql://127.0.0.1:3306/aegis?user=root&password=$carletWitch12&useSSL=false"
+	url = "jdbc:mysql://127.0.0.1:3306/aegis?user=root&password=password&useSSL=false"
 />
 
 <sql:query var="userslist" dataSource="${myDS}">
@@ -132,30 +132,35 @@
 				<b>Grading Sheet</b>
 			</h3>
 
-			<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">Department:
-				<select>
-					<option value="cpe">Computer Engineering</option>
-				</select>
-			</h6>
-			
-			<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">School Year:
-				<select style="margin-left: 1px;">
-					<option value="cpe">1920</option>
-				</select>
-			</h6>
+					<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">Department:
+						<select id="department" name="department">
+							<option value="hs">High School</option>
+							<option value="college" selected>College</option>
+							<option value="test">Test</option>
+						</select>
+					</h6>
 					
-			<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">Sem:
-				<select style="margin-left: 40px;">
-					<option value="cpe">Second</option>
-				</select>
-			</h6>
+					<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">School Year:
+						<select id="schoolYear" name="schoolYear" style="margin-left: 1px;">
+							<option value="1819">1819</option>
+							<option value="1920" selected>1920</option>
+						</select>
+					</h6>
+					
+					<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">Sem:
+						<select id="semester" name="semester" style="margin-left: 40px;">
+							<option value="1">First</option>
+							<option value="2" selected>Second</option>
+							<option value="S">Summer</option>
+						</select>
+					</h6>
 					
 			<h6 align="left" style="margin-left: 6px; margin-bottom: 10px; margin-top: 6px;">
 				<input type="submit" value="Search">
 			</h6>
 			
 			<!-- Content -->
-			<h3 style="color: red; text-align:center;"> "Encoding Of Grades is Not Open." </h3>
+			<h3 id="status" style="color: red; text-align:center;"> "Encoding Of Grades is Not Open." </h3>
 			<h6 align="left" ><i class="fas fa-print"></i><u><a>Print Grading Sheet</a></u></h6>
 			
 			<table class="table-sheet" style="margin:5px;">
@@ -177,7 +182,7 @@
 				<input type="submit" value="Review Grading Sheet">
 			</h6>
 			
-			<table class="table-grade" style="margin-top:10px">
+			<table class="table-grade" style="margin-top:10px" id="xTable">
 				<tr>
 					<th style="width: 3%">#</th>
 					<th style="width: 15%">Student No.</th>

@@ -114,20 +114,25 @@
 					<h3 style="text-align:center;"><b>Grading Sheet</b></h3>
 				
 					<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">Department:
-						<select>
-							<option value="cpe">Computer Engineering</option>
+						<select id="department" name="department">
+							<option value="hs">High School</option>
+							<option value="college">College</option>
+							<option value="test">Test</option>
 						</select>
 					</h6>
 					
 					<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">School Year:
-						<select style="margin-left: 1px;">
-							<option value="cpe">1920</option>
+						<select id="schoolYear" name="schoolYear" style="margin-left: 1px;">
+							<option value="1819">1819</option>
+							<option value="1920">1920</option>
 						</select>
 					</h6>
 					
 					<h6 align="left" style="margin-left: 6px; margin-bottom: 2px;">Sem:
-						<select style="margin-left: 40px;">
-							<option value="cpe">Second</option>
+						<select id="semester" name="semester" style="margin-left: 40px;">
+							<option value="1">First</option>
+							<option value="2">Second</option>
+							<option value="S">Summer</option>
 						</select>
 					</h6>
 					
