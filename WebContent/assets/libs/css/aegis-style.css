@@ -154,6 +154,11 @@
 
 /* 0.1. Body / Typography
    ========================================================================== */
+html,body{
+	height: 100%;
+	width: 100%;
+}
+
 
 body {
     font-family: "Tahoma", sans-serif;
